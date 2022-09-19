@@ -1,4 +1,4 @@
-import function_work_html_ratio.py
+import function_work_html_ratio
 def main():
     for i in range(1):  # для каждой звезды
         function_work_html_ratio(i)
