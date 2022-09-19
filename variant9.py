@@ -26,7 +26,7 @@ def main():
     for i in range (1,2): # для каждой звезды
         #time.sleep(1000)
         
-}
+
         html_text = requests.get(base_URL+'/?ratio='+str(i), headers={"User-Agent": user_agent},proxies=proxy).text
         soup = BeautifulSoup(html_text, 'lxml')
         info_max_page=soup.find('a',class_='pager-item last tooltip-top', href=True)
