@@ -3,19 +3,19 @@ import info
 import page_opinions
 from bs4 import BeautifulSoup
 import time
-
+import random
 def opinion(i,j, href,number_opinion):
-    time.sleep(60)  
-    html_text=requests.get('https://otzovik.com/'+href, headers={"User-Agent": info.user_agent},proxies=info.proxies).text
+    time.sleep(random.randint(30,60))  
+    html_text=requests.get('https://otzovik.com/'+href, headers={"User-Agent": info.user_agent}).text
     soup = BeautifulSoup(html_text, 'lxml')
     plus=soup.find(class_='review-plus') # находим достоинство
     minus=soup.find(class_='review-minus') # находим негатив
     opinion=soup.find(class_='description') # находим отзыв
-    if number_opinion>=3: # 1
+    if len(str(number_opinion))>=3: # 1
         namefile='0'+str(number_opinion)
-    elif number_opinion>=2:
+    elif len(str(number_opinion))>=2:
         namefile='00'+str(number_opinion)
-    elif number_opinion>=1:
+    elif len(str(number_opinion))>=1:
         namefile='000'+str(number_opinion)
     else:
         namefile="0000"+str(number_opinion)
