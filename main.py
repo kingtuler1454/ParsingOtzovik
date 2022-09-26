@@ -10,5 +10,5 @@ def main():
         function_work_html_ratio.function_work_html_ratio(i)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
